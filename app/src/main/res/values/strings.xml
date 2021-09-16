@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Home13</string>
+    <string name="imy">Имя</string>
+    <string name="familia">Фамилия</string>
+    <string name="registr">Регистрация</string>
+    <string name="vvodname">Введите имя</string>
+    <string name="vvodfam">Введите фамилию</string>
+    <string name="login">Введите логин</string>
+    <string name="password">Введите пароль</string>
+    <string name="reppass">Повторите пароль</string>
+    <string name="create">Создать</string>
+    <string name="vhod">Вход</string>
+    <string name="vvlogin">Введите логин</string>
+    <string name="vvpass">Введите пароль</string>
+    <string name="vihod">Войти</string>
+</resources>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SingUpActivity">
+
+    <TextView
+        android:id="@+id/registr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/registr"
+        android:textSize="38sp"
+        android:textColor="@color/blu"
+        android:layout_marginTop="48dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/edName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/vvodname"
+        app:layout_constraintTop_toBottomOf="@id/registr"/>
+
+    <EditText
+        android:id="@+id/edSecond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/vvodfam"
+        app:layout_constraintTop_toBottomOf="@id/edName"/>
+
+    <EditText
+        android:id="@+id/edLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/login"
+        app:layout_constraintTop_toBottomOf="@id/edSecond"/>
+
+    <EditText
+        android:id="@+id/edPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/password"
+        app:layout_constraintTop_toBottomOf="@id/edLogin"/>
+
+    <EditText
+        android:id="@+id/edRepPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/reppass"
+        app:layout_constraintTop_toBottomOf="@id/edPassword"/>
+
+    <Button
+        android:id="@+id/butCreate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginStart="18dp"
+        android:text="@string/create"
+        android:background="@drawable/bg_button"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
