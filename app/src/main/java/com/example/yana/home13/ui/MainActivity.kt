@@ -1,8 +1,8 @@
-package com.example.yana.home13
+package com.example.yana.home13.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import com.example.yana.home13.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

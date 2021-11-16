@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/splashFragment"
         tools:layout="@layout/fragment_splash"
-        android:name="com.example.yana.home13.SplashFragment"
+        android:name="com.example.yana.home13.ui.SplashFragment"
         android:label="SplashFragment" >
         <action
             android:id="@+id/action_splashFragment_to_singUpFragment"
@@ -28,7 +28,7 @@
     <fragment
         android:id="@+id/singInFragment"
         tools:layout="@layout/fragment_sing_in"
-        android:name="com.example.yana.home13.SingInFragment"
+        android:name="com.example.yana.home13.ui.SingInFragment"
         android:label="SingInFragment" >
         <action
             android:id="@+id/action_singInFragment_to_displayFragment"
@@ -51,7 +51,7 @@
     <fragment
         android:id="@+id/singUpFragment"
         tools:layout="@layout/fragment_sing_up"
-        android:name="com.example.yana.home13.SingUpFragment"
+        android:name="com.example.yana.home13.ui.SingUpFragment"
         android:label="SingUpFragment" >
         <action
             android:id="@+id/action_singUpFragment_to_displayFragment"
@@ -83,7 +83,7 @@
     </fragment>
     <fragment
         android:id="@+id/displayFragment"
-        android:name="com.example.yana.home13.DisplayFragment"
+        android:name="com.example.yana.home13.ui.DisplayFragment"
         android:label="fragment_display"
         tools:layout="@layout/fragment_display" >
         <argument

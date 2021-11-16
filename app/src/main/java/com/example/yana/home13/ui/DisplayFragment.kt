@@ -1,16 +1,21 @@
-package com.example.yana.home13
+package com.example.yana.home13.ui
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
+import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import com.example.yana.home13.PreferenceHelp
+import com.example.yana.home13.R
 
 class DisplayFragment : Fragment(R.layout.fragment_display) {
 
     private val args: DisplayFragmentArgs by navArgs()
+
+    private val viewModel: DisplayViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
