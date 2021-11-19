@@ -23,34 +23,17 @@ class SingInFragment: Fragment(R.layout.fragment_sing_in) {
         val butVhod = view.findViewById<Button>(R.id.butVhod)
 
         butVhod.setOnClickListener{
-            val edLogin = PreferenceHelp.getedLogin()
-            val edPassword = PreferenceHelp.getedPassword()
-            if (edPassword == edPassw.text.toString() && edLogin == edLog.text.toString()){
-            }
+            viewModel.checkUserData(edLog.text.toString(), edPassw.text.toString())
         }
-            val directions = SingInFragmentDirections.actionSingInFragmentToDisplayFragment(
-                edLog.text.toString(),
-                edPassw.text.toString()
-            )
-            findNavController().navigate(directions)
+        viewModel.isValidCredential.observe(viewLifecycleOwner, {
+            if (it)navigateToMain(edLog.text.toString(), edPassw.text.toString())
+        })
         }
+    private fun navigateToMain(login:String, password:String){
+        val directions = SingInFragmentDirections.actionSingInFragmentToDisplayFragment(
+            login,
+            password
+        )
+        findNavController().navigate(directions)
     }
-
-
-
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.fragment_sing_in)
-//
-
-//
-//        butVhod.setOnClickListener{
-//            val edLogin = PreferenceHelp.getedLogin()
-//            val edPassword = PreferenceHelp.getedPassword()
-//            if (edPassword == edPassw.text.toString() && edLogin == edLog.text.toString()){
-//                val intent = Intent(this, MainActivity::class.java)
-//                startActivity(intent)
-//                finish()
-//            }
-//        }
-//    }
+    }

@@ -14,18 +14,22 @@ class SplashFragment: Fragment(R.layout.fragment_splash) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupViewModel()
+    }
 
-        val edLogin = PreferenceHelp.getedLogin()
-        val edPassw = PreferenceHelp.getedPassword()
+    private fun setupViewModel() {
+        viewModel.isNeededRegisterEvent.observe(viewLifecycleOwner, {
+            if (it) navigateToSignUp() else navigateToSignIn()
+        })
+    }
+    private fun navigateToSignUp(){
+        val direct = SplashFragmentDirections.actionSplashFragmentToSingUpFragment()
+        findNavController().navigate(direct)
+    }
 
-        if (edLogin.isNullOrEmpty()
-            && edPassw.isNullOrEmpty()){
-            val direct = SplashFragmentDirections.actionSplashFragmentToSingUpFragment()
-            findNavController().navigate(direct)
-        }else{
-            val direction = SplashFragmentDirections.actionSplashFragmentToSingInFragment()
-            findNavController().navigate(direction)
-        }
+    private fun navigateToSignIn(){
+        val direction = SplashFragmentDirections.actionSplashFragmentToSingInFragment()
+        findNavController().navigate(direction)
     }
 }
 

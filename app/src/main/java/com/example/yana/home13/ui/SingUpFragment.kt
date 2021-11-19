@@ -7,10 +7,9 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.yana.home13.PreferenceHelp
 import com.example.yana.home13.R
 
-class SingUpFragment: Fragment(R.layout.fragment_sing_up) {
+class SingUpFragment : Fragment(R.layout.fragment_sing_up) {
 
     private val viewModel: SingUpViewModel by viewModels()
 
@@ -24,39 +23,22 @@ class SingUpFragment: Fragment(R.layout.fragment_sing_up) {
         val edRepPass = view.findViewById<EditText>(R.id.edRepPass)
         val butCreate = view.findViewById<Button>(R.id.butCreate)
 
-        butCreate.setOnClickListener{
-
-            PreferenceHelp.saveName(edName.text.toString())
-            PreferenceHelp.saveSecondName(edSecond.text.toString())
-            PreferenceHelp.saveedLogin(edLogin.text.toString())
-            PreferenceHelp.saveedPassword(edPassword.text.toString())
-
-            val directions = SingUpFragmentDirections.actionSingUpFragmentToDisplayFragment(
+        butCreate.setOnClickListener {
+            viewModel.saveUserData(
                 edName.text.toString(),
-                edSecond.text.toString())
-            findNavController().navigate(directions)
+                edSecond.text.toString(),
+                edLogin.text.toString(),
+                edPassword.text.toString()
+            )
+            navigateMainScreen(edName.text.toString(), edSecond.text.toString())
         }
+    }
+    private fun navigateMainScreen(edName: String, edSecond: String) {
+        val directions = SingUpFragmentDirections.actionSingUpFragmentToDisplayFragment(
+            edName,
+            edSecond
+        )
+        findNavController().navigate(directions)
     }
 }
 
-
-
-
-
-
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.fragment_sing_up)
-
-//
-//        butCreate.setOnClickListener{
-//            PreferenceHelp.saveName(edName.text.toString())
-//            PreferenceHelp.saveSecondName(edSecond.text.toString())
-//            PreferenceHelp.saveedLogin(edLogin.text.toString())
-//            PreferenceHelp.saveedPassword(edPassword.text.toString())
-//
-//            val intent = Intent(this, MainActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
-//    }
